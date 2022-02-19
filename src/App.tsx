@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FC } from "react";
+import { Switch, Route } from "react-router-dom";
+import Dashboard from "./Screens/Dashboard/Dashboard";
+import ForgetPassword from "./Screens/ForgetPassword/ForgetPassword";
+import Homepage from "./Screens/Homepage/Homepage";
+import Login from "./Screens/Login/Login";
+import PostJob from "./Screens/PostJob/PostJob";
+import ResetPassword from "./Screens/ResetPassword/ResetPassword";
+import Signup from "./Screens/Signup/Signup";
 
-function App() {
+const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+      <Route exact path="/" component={Homepage} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/signup" component={Signup} />
+      <Route exact path="/forgetpassword" component={ForgetPassword} />
+      <Route exact path="/resetpassword" component={ResetPassword} />
+      <Route exact path="/dashboard" component={Dashboard} />
+      <Route exact path="/postjob" component={PostJob} />
+    </Switch>
   );
-}
-
+};
 export default App;

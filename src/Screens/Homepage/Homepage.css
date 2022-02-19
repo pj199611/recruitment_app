@@ -1,0 +1,74 @@
+.Homepage_container {
+  min-height: 100%;
+  position: relative;
+}
+
+.Homepage_top {
+  height: 20%;
+  background: transparent linear-gradient(248deg, #303f60 0%, #1a253c 100%) 0%
+    0% no-repeat padding-box;
+  position: relative;
+}
+
+.Homepage_top_text {
+  color: white;
+  font-size: 60px;
+}
+
+.Homepage_top_container_left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Homepage_top_container_right {
+  width: 50%;
+}
+
+.Homepage_top_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 2%;
+}
+
+/* bottom */
+
+.Homepage_bottom {
+  height: 80%;
+  background-color: #edf6ff;
+  padding-top: 5%;
+}
+
+.Homepage_bottom_row_container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* card  */
+
+.HomePage_card_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.Homepage_card_heading {
+  color: #43afff;
+  font-size: 22px;
+}
+
+.Homepage_card_body {
+  margin-top: 15px;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.image_banner {
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  left: 49%;
+}

@@ -1,0 +1,77 @@
+
+.Dashboard_top {
+  height: 40vh;
+  background: transparent linear-gradient(248deg, #303f60 0%, #1a253c 100%) 0%
+    0% no-repeat padding-box;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.Dashboard_bottom {
+  height: 80vh;
+  background-color: #edf6ff;
+}
+
+.Dashboard_bottom_no_job {
+  height: 80vh;
+  background-color: #edf6ff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.no_job_bottom_container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no_job_bottom_text {
+  color: #303f60;
+  font-size: 25px;
+}
+
+.Dashboard_content {
+  position: absolute;
+  top: 30%;
+  left:16%
+}
+
+.Dashboard_top_container {
+  color: white;
+}
+
+.Dashboard_top_container_text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Dashboard_top_container_card_col {
+  margin-right: 8% !important;
+  margin-top: 1% !important;
+}
+
+.Link{
+    text-decoration: none;
+  }
+  
+.container_pagination{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+}
+
+.page_class{
+  text-decoration: none;
+}
+
+
+
+
+ 

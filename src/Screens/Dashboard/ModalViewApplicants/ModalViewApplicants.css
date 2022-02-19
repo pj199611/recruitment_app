@@ -1,0 +1,28 @@
+.MobileViewApplicantscontainer {
+  width: 92%;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #303f6080;
+  border-radius: 5px;
+  opacity: 1;
+  margin:3%;
+  height: 150px;
+  
+}
+
+
+.MobileViewApplicantscontainer_top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.MobileViewApplicantscontainer_top_name_email{
+    display: flex;
+    flex-direction: column;
+   
+    
+}
+
+.MobileViewApplicantscontainer_bottom{
+    margin-top: 10%;
+}
