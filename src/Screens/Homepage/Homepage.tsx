@@ -150,6 +150,7 @@ const Homepage: FC<IHomepage> = () => {
               display: "flex",
               flexDirection: "row",
               justifyContent: "space-between",
+              width:"108%"
             }}
           >
             <Col sm={12} md={2} xl={2}>
@@ -169,7 +170,7 @@ const Homepage: FC<IHomepage> = () => {
             </Col>
           </Row>
 
-          <Row style={{ display: "flex", justifyContent: "center" }}>
+          <Row style={{ display: "flex", justifyContent: "center",width:"111%" }}>
             <Col sm={12} md={2} xl={2}>
               <img height="60" src={sixth} alt="" />
             </Col>

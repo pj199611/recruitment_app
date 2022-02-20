@@ -146,7 +146,7 @@ const JobCard: FC<IJobCard> = ({ description, id, title, location, token }) => {
               alignItems: "center",
             }}
           >
-            <img height="20" src={locationImg} alt="" />
+            <img style={{marginRight:"5px"}} height="20" src={locationImg} alt="" />
             <p className="Job_Card_text">{location}</p>
           </div>
 
