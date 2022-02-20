@@ -7,6 +7,8 @@ import Avatar from "react-avatar";
 import dropdown from "../../assets/dropdown.png";
 import { useHistory } from "react-router-dom";
 import { signout } from "../../utilties/utils";
+import { LOGOUT } from "../../store/LogoutReducer/LogoutActions";
+import {useDispatch,  } from "react-redux";
 
 const useStyles = makeStyles(() => ({
   button: {
@@ -41,7 +43,7 @@ const Header: FC<IHeader> = ({
   const classes = useStyles();
   const [toggle, settoggle] = useState<boolean>(false);
   const history = useHistory();
-
+  const dispatch=useDispatch()
 
   return (
     <>
@@ -97,6 +99,7 @@ const Header: FC<IHeader> = ({
                       <div
                         onClick={() => {
                           signout("token");
+                          dispatch(LOGOUT())
                           history.push("/");
                         }}
                         className="tooltip_container"

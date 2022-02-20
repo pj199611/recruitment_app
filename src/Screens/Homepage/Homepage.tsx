@@ -18,6 +18,10 @@ import sixth from "../../assets/sixth.png";
 import seventh from "../../assets/seventh.png";
 import eight from "../../assets/eigth.png";
 import nine from "../../assets/nine.png";
+import cross from "../../assets/cross.svg";
+import IconButton from '@mui/material/IconButton';
+import { CLOSE } from "../../store/LogoutReducer/LogoutActions";
+import { useSelector, useDispatch } from "react-redux";
 import "./Homepage.css";
 
 interface IHomepage {}
@@ -45,6 +49,8 @@ const Homepage: FC<IHomepage> = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("md"));
   const history = useHistory();
+  const logout = useSelector((state: any) => state.LogoutReducer.logout);
+  const dispatch=useDispatch();
 
   useEffect(() => {
     window.scroll({
@@ -59,6 +65,40 @@ const Homepage: FC<IHomepage> = () => {
     }
   }, [history]);
 
+  const Logout = () => {
+    return (
+      <div
+        style={{
+          position: "absolute",
+          top: "20%",
+          right: "5%",
+          backgroundColor: "#FFFFFF",
+          height: "99px",
+          width: "343px",
+          borderRadius: "5px",
+          display: "flex",
+          flexDirection: "column",
+          paddingLeft: "20px",
+          paddingRight: "20px",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+          }}
+        >
+          <p style={{ color: "#43AFFF" }}>Logout</p>
+          <IconButton onClick={()=>dispatch(CLOSE())}><img src={cross} alt="cross" /></IconButton>
+        </div>
+
+        <span style={{ color: "#303F60" }}>
+          You have successfully logged out.
+        </span>
+      </div>
+    );
+  };
   return (
     <div className="Homepage_container">
       <div className="Homepage_top">
@@ -83,6 +123,7 @@ const Homepage: FC<IHomepage> = () => {
             />
           )}
         </Container>
+        {logout && <Logout />}
       </div>
 
       <div className="Homepage_bottom">
@@ -150,7 +191,7 @@ const Homepage: FC<IHomepage> = () => {
               display: "flex",
               flexDirection: "row",
               justifyContent: "space-between",
-              width:"108%"
+              width: "108%",
             }}
           >
             <Col sm={12} md={2} xl={2}>
@@ -170,7 +211,9 @@ const Homepage: FC<IHomepage> = () => {
             </Col>
           </Row>
 
-          <Row style={{ display: "flex", justifyContent: "center",width:"111%" }}>
+          <Row
+            style={{ display: "flex", justifyContent: "center", width: "111%" }}
+          >
             <Col sm={12} md={2} xl={2}>
               <img height="60" src={sixth} alt="" />
             </Col>
