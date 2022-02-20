@@ -1,8 +1,8 @@
 .Login_container {
-  min-height: 120vh;
+  height: 100vh;
 }
 .Login_top {
-  height: 50vh;
+  height: 49%;
   background: transparent linear-gradient(248deg, #303f60 0%, #1a253c 100%) 0%
     0% no-repeat padding-box;
   position: relative;
@@ -11,6 +11,7 @@
 }
 
 .Login_bottom {
-  height: 70vh;
+  height: 50%;
   background-color: #edf6ff;
 }
+

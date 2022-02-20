@@ -33,7 +33,7 @@ const useStyles = makeStyles(() => ({
     textTransform: "none",
   },
   dialogPaper: {
-    height: "100%",
+    height: "77%",
     width: "100%",
   },
 }));

@@ -1,6 +1,11 @@
 
+.container{
+  height:100vh;
+  display:relative
+}
+
 .Dashboard_top {
-  height: 40vh;
+  height: 30%;
   background: transparent linear-gradient(248deg, #303f60 0%, #1a253c 100%) 0%
     0% no-repeat padding-box;
   position: relative;
@@ -9,17 +14,19 @@
 }
 
 .Dashboard_bottom {
-  height: 80vh;
-  background-color: #edf6ff;
+  height: 70%;
+  background-color:#EDF6FF
 }
 
 .Dashboard_bottom_no_job {
-  height: 80vh;
+  height: 70%;
   background-color: #edf6ff;
-  position: relative;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
+  left:50%;
+  top:20%;
 }
 
 
@@ -29,6 +36,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width:400px;
+  
 }
 
 .no_job_bottom_text {
@@ -74,4 +83,6 @@
 
 
 
- 
+ .heading_auth{
+   font-size:22px
+ }

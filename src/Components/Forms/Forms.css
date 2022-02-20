@@ -1,5 +1,5 @@
 .Form_container {
-  width: 40%;
+  width: 557px;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -8,9 +8,8 @@
   border-radius: 20px;
   opacity: 1;
   top: 50%;
-  left: 30%;
+  left: 35%;
   padding:2%;
-
 }
 
 
@@ -77,7 +76,8 @@
 
 .btn_container{
   text-align: center;
-  margin-top: 10%;
+  margin-top: 5%;
+  margin-bottom:5%
 }
 
 
@@ -124,7 +124,9 @@
 }
 
 .heading_fontSize{
-  font-size:18px
+  font-size:22px;
+  color:#303F60;
+  margin-bottom: 2%;
 }
 .left{
   display:flex;

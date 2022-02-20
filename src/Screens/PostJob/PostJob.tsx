@@ -40,9 +40,9 @@ const PostJob: FC<IPostJob> = () => {
         <Forms token={token} showpostajobform={true} />
         <Container className="post_top_container">
           <div className="post_top_container_text">
-            <img height="20" src={home} alt="" />
+            <img src={home} alt="" />
             <Link to="/dashboard" className="Link">
-              <p style={{ marginLeft: "25%", color: "white" }}>Home</p>
+              <p style={{ marginLeft: "25%", color: "white",fontSize:"12px" }}>Home</p>
             </Link>
           </div>
         </Container>

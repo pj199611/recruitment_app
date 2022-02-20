@@ -9,7 +9,7 @@ import axios from "axios";
 import { getCookie } from "../../utilties/utils";
 import { makeStyles } from "@material-ui/core/styles";
 import pencilandpaper from "../../assets/pencilandpaper.svg";
-import ReactPaginate from "react-paginate";
+import Pagination from "@mui/material/Pagination";
 import { useHistory } from "react-router-dom";
 
 interface IDashboard {}
@@ -29,6 +29,13 @@ const useStyles = makeStyles(() => ({
     height: "50px",
     textTtransform: "unset !important",
   },
+  root: {
+    "& .Mui-selected": {
+      color: "#303F60",
+      backgroundColor: "#D9EFFF !important",
+      fontWeight:"bold"
+    },
+  },
 }));
 
 const Dashboard: FC<IDashboard> = () => {
@@ -41,7 +48,7 @@ const Dashboard: FC<IDashboard> = () => {
   const [pageCount, setPageCount] = useState<any>();
   const [itemOffset, setItemOffset] = useState<any>(0);
 
-  // const classes = useStyles();
+  const classes = useStyles();
   const history = useHistory();
 
   useEffect(() => {
@@ -126,11 +133,11 @@ const Dashboard: FC<IDashboard> = () => {
   const headingAuth = () => {
     if (roleobj) {
       if (roleobj.recruiter) {
-        return <h1>Jobs posted by you</h1>;
+        return <p className="heading_auth">Jobs posted by you</p>;
       }
 
       if (roleobj.candidate) {
-        return <h1>Jobs for you</h1>;
+        return <p className="heading_auth">Jobs for you</p>;
       }
     }
   };
@@ -150,19 +157,19 @@ const Dashboard: FC<IDashboard> = () => {
     }
   };
 
-  const handlePageClick = (event: any) => {
+  const handlePageClick = (event: any, page: any) => {
     let newOffset;
     if (postedjobs && postedjobs.length > 0) {
-      newOffset = (event.selected * 12) % postedjobs?.length;
+      newOffset = ((page - 1) * 12) % postedjobs?.length;
     }
     if (jobstoapply && jobstoapply.length > 0) {
-      newOffset = (event.selected * 12) % jobstoapply?.length;
+      newOffset = ((page - 1) * 12) % jobstoapply?.length;
     }
     setItemOffset(newOffset);
   };
 
   return (
-    <div>
+    <div className="container">
       <div className="Dashboard_top">
         <Header
           roleAuth={roleobj}
@@ -172,13 +179,13 @@ const Dashboard: FC<IDashboard> = () => {
 
         <Container className="Dashboard_top_container">
           <div className="Dashboard_top_container_text">
-            <img height="20" src={home} alt="" />
-            <p style={{ marginLeft: "1%" }}>Home</p>
+            <img src={home} alt="" />
+            <p style={{ marginLeft: "1%", color: "white",fontSize:"12px" }}>Home</p>
           </div>
 
           {headingAuth()}
 
-          <Row >
+          <Row>
             {currentItems &&
               currentItems?.map((eachJob: any) => {
                 return (
@@ -202,16 +209,20 @@ const Dashboard: FC<IDashboard> = () => {
           </Row>
         </Container>
         {currentItems?.length && (
-          <div >
-            <ReactPaginate
-              breakLabel="..."
-              nextLabel="next"
-              onPageChange={handlePageClick}
-              pageRangeDisplayed={5}
-              pageCount={pageCount}
-              previousLabel="previous"
-              containerClassName={"container_pagination"}
-              pageClassName={"page_class"}
+          <div
+            style={{
+              display: "flex",
+              position: "absolute",
+              top: "90vh",
+              left: "45%",
+            }}
+          >
+            <Pagination
+              className={classes.root}
+              onChange={handlePageClick}
+              count={pageCount}
+              variant="outlined"
+              shape="rounded"
             />
           </div>
         )}

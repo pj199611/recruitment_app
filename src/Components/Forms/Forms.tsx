@@ -38,6 +38,10 @@ const useStyles = makeStyles(() => ({
     height: "50px",
     textTransform: "none",
   },
+  default:{
+    textTransform: "none",
+    width: "150px",
+  }
 }));
 
 interface IForms {
@@ -314,7 +318,7 @@ const Forms: FC<IForms> = ({
 
                   <div className="Form_container_inner_btn_container">
                     <Button
-                      className={roleTypeFlag.recruiter ? classes.button : ""}
+                      className={roleTypeFlag.recruiter ? classes.button : classes.default}
                       onClick={() => btnrolechanger("recruiter")}
                       variant="outlined"
                     >
@@ -326,7 +330,7 @@ const Forms: FC<IForms> = ({
 
                     <Button
                       style={{ marginLeft: "5%" }}
-                      className={roleTypeFlag.candidate ? classes.button : ""}
+                      className={roleTypeFlag.candidate ? classes.button : classes.default}
                       onClick={() => btnrolechanger("candidate")}
                       variant="outlined"
                     >
